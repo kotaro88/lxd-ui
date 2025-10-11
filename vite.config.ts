@@ -4,8 +4,6 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import * as dotenv from "dotenv";
 import * as fs from "fs";
 
-import path from "path";
-
 // Load .env.local if it exists to override default environment variables
 dotenv.config({ path: ".env" });
 if (fs.existsSync(".env.local")) {
@@ -28,13 +26,6 @@ export default defineConfig({
   },
   plugins: [tsconfigPaths(), react()],
   server: {
-    https: {
-      pfx: fs.readFileSync(
-        path.resolve(__dirname, "keys/lxd-ui-localhost.pfx"),
-      ),
-      // key: fs.readFileSync(path.resolve(__dirname, "keys/server.key")),
-      // cert: fs.readFileSync(path.resolve(__dirname, "keys/server.crt")),
-    },
     port: process.env.VITE_PORT ? Number(process.env.VITE_PORT) : 3000,
     strictPort: true,
     hmr: process.env.CI ? false : undefined,
