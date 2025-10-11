@@ -240,7 +240,7 @@ const ProjectDetailsForm: FC<Props> = ({ formik, project, isEdit }) => {
               value={features}
               options={[
                 {
-                  label: "Default LXD",
+                  label: "Default",
                   value: "default",
                 },
                 {

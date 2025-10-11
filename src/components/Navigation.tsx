@@ -512,21 +512,7 @@ const Navigation: FC = () => {
                           </NavAccordion>
                         </SideNavigationItem>
                       )}
-                      {!isClustered && (
-                        <SideNavigationItem>
-                          <NavLink
-                            to="/ui/server"
-                            title="Server"
-                            onClick={softToggleMenu}
-                          >
-                            <Icon
-                              className="is-light p-side-navigation__icon"
-                              name="cluster-host"
-                            />{" "}
-                            Server
-                          </NavLink>
-                        </SideNavigationItem>
-                      )}
+
                       <SideNavigationItem>
                         <NavLink
                           to={`/ui/operations`}
@@ -555,56 +541,7 @@ const Navigation: FC = () => {
                           </NavLink>
                         </SideNavigationItem>
                       )}
-                      {hasAccessManagement && (
-                        <SideNavigationItem>
-                          <NavAccordion
-                            baseUrl="/ui/permissions"
-                            title={`Permissions`}
-                            iconName="user"
-                            label="Permissions"
-                            onOpen={() => {
-                              toggleAccordionNav("permissions");
-                            }}
-                            open={openNavMenus.includes("permissions")}
-                          >
-                            {[
-                              <SideNavigationItem key="/ui/permissions/identities">
-                                <NavLink
-                                  to="/ui/permissions/identities?system-identities=hide"
-                                  title="Identities"
-                                  onClick={softToggleMenu}
-                                  activeUrlMatches={[
-                                    "/ui/permissions/identities",
-                                  ]}
-                                  className="accordion-nav-secondary"
-                                >
-                                  Identities
-                                </NavLink>
-                              </SideNavigationItem>,
-                              <SideNavigationItem key="/ui/permissions/groups">
-                                <NavLink
-                                  to="/ui/permissions/groups"
-                                  title="Groups"
-                                  onClick={softToggleMenu}
-                                  className="accordion-nav-secondary"
-                                >
-                                  Groups
-                                </NavLink>
-                              </SideNavigationItem>,
-                              <SideNavigationItem key="/ui/permissions/idp-groups">
-                                <NavLink
-                                  to="/ui/permissions/idp-groups"
-                                  title="Identity provider groups"
-                                  onClick={softToggleMenu}
-                                  className="accordion-nav-secondary"
-                                >
-                                  IDP groups
-                                </NavLink>
-                              </SideNavigationItem>,
-                            ]}
-                          </NavAccordion>
-                        </SideNavigationItem>
-                      )}
+
                       <SideNavigationItem>
                         <NavLink
                           to="/ui/settings"

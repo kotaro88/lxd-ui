@@ -225,11 +225,11 @@ export const getConfigurationRow = ({
         <div className="mono-font">
           <b>{readOnlyRenderer(metadata.value)}</b>
         </div>
-        {metadata && (
+        {/* {metadata && (
           <div className="p-text--small u-text--muted">
             From: {metadata.source}
           </div>
-        )}
+        )} */}
       </div>
     ),
     override: renderOverride(),

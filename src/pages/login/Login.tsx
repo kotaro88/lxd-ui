@@ -45,22 +45,9 @@ const Login: FC = () => {
               {hasOidc && (
                 <a className="p-button--positive has-icon" href="/oidc/login">
                   <Icon name="security" light />
-                  <span>Login with SSO</span>
+                  <span>Login Navicloud</span>
                 </a>
               )}
-              {!hasOidc && (
-                <Button hasIcon onClick={openModal} appearance="positive">
-                  <Icon name="security" light />
-                  <span>Set up SSO login</span>
-                </Button>
-              )}
-              <Link
-                className="has-icon p-button"
-                to="/ui/login/certificate-generate"
-              >
-                <Icon name="certificate" />
-                <span>Set up TLS login</span>
-              </Link>
             </div>
           </>
         </div>
