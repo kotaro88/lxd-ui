@@ -15,9 +15,9 @@ const Logo: FC<Props> = ({ light }) => {
   const isMicroCloud = hasMicroCloudFlag(settings);
 
   const src = isMicroCloud
-    ? "/ui/assets/img/microCloud-logo.svg"
-    : "/ui/assets/img/lxd-logo.svg";
-  const heading = isMicroCloud ? "MicroCloud" : "Canonical LXD";
+    ? "/ui/assets/img/navicloud-logo.png"
+    : "/ui/assets/img/navicloud-logo.png";
+  const heading = "Navicloud";
 
   const getLogoLink = () => {
     if (isLoading || !project) {
@@ -28,7 +28,7 @@ const Logo: FC<Props> = ({ light }) => {
 
   return (
     <NavLink className="p-panel__logo" to={getLogoLink()}>
-      <img src={src} alt="LXD-UI logo" className="p-panel__logo-image" />
+      <img src={src} alt="Navicloud logo" className="p-panel__logo-image" />
       <div
         className={classNames("logo-text p-heading--4", { "is-light": light })}
       >

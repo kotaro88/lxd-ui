@@ -5,11 +5,11 @@ import { hasMicroCloudFlag } from "util/settings";
 export const setTitle = (): void => {
   const { data: settings } = useSettings();
   const isMicroCloud = hasMicroCloudFlag(settings);
-  const suffix = isMicroCloud ? "MicroCloud" : "LXD UI";
+  const suffix = "Navicloud Console";
 
   const favicon = document.querySelector("link[rel='shortcut icon']");
   if (favicon && isMicroCloud) {
-    (favicon as HTMLLinkElement).href = "/assets/img/microCloud-32x32.png";
+    (favicon as HTMLLinkElement).href = "/assets/img/navicloud-logo.png";
   }
 
   useEffect(() => {

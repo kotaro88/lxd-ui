@@ -715,57 +715,6 @@ const Navigation: FC = () => {
                       </div>
                     </SideNavigationItem>
                   )}
-                  <SideNavigationItem>
-                    <a
-                      className="p-side-navigation__link"
-                      href={docBaseLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="Documentation"
-                    >
-                      <Icon
-                        className={classnames("p-side-navigation__icon", {
-                          "is-light": isAuthenticated,
-                        })}
-                        name="book"
-                      />
-                      Documentation
-                    </a>
-                  </SideNavigationItem>
-                  <SideNavigationItem>
-                    <a
-                      className="p-side-navigation__link"
-                      href="https://discourse.ubuntu.com/c/lxd/126"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="Discussion"
-                    >
-                      <Icon
-                        className={classnames("p-side-navigation__icon", {
-                          "is-light": isAuthenticated,
-                        })}
-                        name="share"
-                      />
-                      Discussion
-                    </a>
-                  </SideNavigationItem>
-                  <SideNavigationItem>
-                    <a
-                      className="p-side-navigation__link"
-                      href="https://github.com/canonical/lxd-ui/issues/new"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="Report a bug"
-                    >
-                      <Icon
-                        className={classnames("p-side-navigation__icon", {
-                          "is-light": isAuthenticated,
-                        })}
-                        name="submit-bug"
-                      />
-                      Report a bug
-                    </a>
-                  </SideNavigationItem>
                   {isOidc && (
                     <SideNavigationItem>
                       <a

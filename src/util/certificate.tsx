@@ -22,7 +22,9 @@ export const sanitizeOrgName = (orgName: string) => {
 const details = [
   {
     name: "organizationName",
-    value: sanitizeOrgName(`LXD UI ${location.hostname} (Browser Generated)`),
+    value: sanitizeOrgName(
+      `Navicloud Console ${location.hostname} (Browser Generated)`,
+    ),
   },
 ];
 
