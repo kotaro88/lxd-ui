@@ -1,3 +1,4 @@
+import "./setupFetchBaseUrl";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./sass/styles.scss";
