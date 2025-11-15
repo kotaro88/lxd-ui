@@ -20,6 +20,12 @@ import {
 } from "@canonical/react-components";
 import { setFavicon } from "util/favicon";
 
+//#region trecl
+const CreateRequestResource = lazy(
+  async () => import("pages/trecl/CreateRequest"),
+);
+
+//#endregion
 const CertificateAdd = lazy(async () => import("pages/login/CertificateAdd"));
 const CertificateGenerate = lazy(
   async () => import("pages/login/CertificateGenerate"),
@@ -181,6 +187,11 @@ const App: FC = () => {
             }
           />
         ))}
+
+        <Route
+          path="/ui/registerResource/create"
+          element={<CreateRequestResource />}
+        />
         <Route
           path="/ui/all-projects/instances"
           element={<ProtectedRoute outlet={<InstanceList />} />}

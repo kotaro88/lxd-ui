@@ -45,7 +45,7 @@ const Login: FC = () => {
               {hasOidc && (
                 <a className="p-button--positive has-icon" href="/oidc/login">
                   <Icon name="security" light />
-                  <span>Login Navicloud</span>
+                  <span>Login TreCloud</span>
                 </a>
               )}
             </div>

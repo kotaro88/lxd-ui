@@ -56,7 +56,7 @@ const StatusBar: FC<Props> = ({ className }) => {
         className={classnames("status-bar", className)}
         id="status-bar"
       >
-        <Version />
+        <div>Have a good day on cloud ☁️ ☁️ ☁️</div>
         <div className="status-right-container">
           <OperationStatus />
           {hasNotifications && (

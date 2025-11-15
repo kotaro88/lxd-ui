@@ -25,6 +25,7 @@ import { isSnapshotsDisabled } from "util/snapshots";
 import useSortTableData from "util/useSortTableData";
 import NotificationRow from "components/NotificationRow";
 import ResourceLink from "components/ResourceLink";
+import { Link } from "react-router-dom";
 
 const collapsedViewMaxWidth = 1250;
 export const figureCollapsedScreen = (): boolean =>
@@ -321,19 +322,12 @@ const InstanceSnapshots = (props: Props) => {
               <Icon className="external-link-icon" name="external-link" />
             </a>
           </p>
-          <InstanceConfigureSnapshotsBtn
-            instance={instance}
-            onFailure={onFailure}
-            onSuccess={onSuccess}
-            isDisabled={snapshotsDisabled}
-          />
-          <InstanceAddSnapshotBtn
-            instance={instance}
-            onSuccess={onSuccess}
-            onFailure={onFailure}
-            className="empty-state-button"
-            isDisabled={snapshotsDisabled}
-          />
+          <p>
+            <Link to="">
+              Please contact the administrator to register Snapshot Schedule
+              <Icon className="external-link-icon" name="external-link" />
+            </Link>
+          </p>
         </EmptyState>
       )}
     </div>

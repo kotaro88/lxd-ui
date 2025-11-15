@@ -23,7 +23,7 @@ const details = [
   {
     name: "organizationName",
     value: sanitizeOrgName(
-      `Navicloud Console ${location.hostname} (Browser Generated)`,
+      `TreCloud Console ${location.hostname} (Browser Generated)`,
     ),
   },
 ];

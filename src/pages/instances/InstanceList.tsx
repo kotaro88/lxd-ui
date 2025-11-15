@@ -19,7 +19,7 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import { queryKeys } from "util/queryKeys";
 import usePanelParams, { panels } from "util/usePanelParams";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { instanceCreationTypes } from "util/instanceOptions";
 import InstanceStatusIcon from "./InstanceStatusIcon";
 import classnames from "classnames";
@@ -29,7 +29,6 @@ import InstanceLink from "pages/instances/InstanceLink";
 import SelectableMainTable from "components/SelectableMainTable";
 import InstanceBulkActions from "pages/instances/actions/InstanceBulkActions";
 import { getIpAddresses } from "util/networks";
-import InstanceBulkDelete from "pages/instances/actions/InstanceBulkDelete";
 import InstanceSearchFilter from "./InstanceSearchFilter";
 import type { InstanceFilters } from "util/instanceFilter";
 import { enrichStatuses } from "util/instanceFilter";
@@ -103,7 +102,7 @@ const InstanceList: FC = () => {
   const { project, isAllProjects } = useCurrentProject();
   const { data: defaultProject } = useProject("default", isAllProjects);
   const [createButtonLabel, _setCreateButtonLabel] =
-    useState<string>("Create instance");
+    useState<string>("Request instance");
   const [searchParams] = useSearchParams();
   const isClustered = useIsClustered();
   const { canCreateInstances } = useProjectEntitlements();
@@ -149,7 +148,7 @@ const InstanceList: FC = () => {
   }
 
   const setCreateButtonLabel = () => {
-    _setCreateButtonLabel(isMediumScreen ? "Create" : "Create instance");
+    _setCreateButtonLabel(isMediumScreen ? "Request" : "Request instance");
   };
   useListener(window, setCreateButtonLabel, "resize", true);
 
@@ -673,13 +672,13 @@ const InstanceList: FC = () => {
                       setProcessingNames([]);
                     }}
                   />
-                  <InstanceBulkDelete
+                  {/* <InstanceBulkDelete
                     instances={selectedInstances}
                     onStart={setProcessingNames}
                     onFinish={() => {
                       setProcessingNames([]);
                     }}
-                  />
+                  /> */}
                 </>
               )}
             </PageHeader.Left>
@@ -688,11 +687,7 @@ const InstanceList: FC = () => {
                 <Button
                   appearance="positive"
                   className="u-float-right u-no-margin--bottom"
-                  onClick={async () =>
-                    navigate(
-                      `/ui/project/${encodeURIComponent(projectForCreationName)}/instances/create`,
-                    )
-                  }
+                  onClick={async () => navigate(`/ui/registerResource/create`)}
                   hasIcon={!isSmallScreen}
                   disabled={!!createInstanceRestriction}
                   title={createInstanceRestriction}
@@ -803,28 +798,11 @@ const InstanceList: FC = () => {
                     : ""}
                 </p>
                 <p>
-                  <a
-                    href={`${docBaseLink}/howto/instances_create/`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    How to create instances
+                  <Link to={"/ui/registerResource/create"}>
+                    Please contact the administrator to request a instance setup
                     <Icon className="external-link-icon" name="external-link" />
-                  </a>
+                  </Link>
                 </p>
-                <Button
-                  className="empty-state-button"
-                  appearance="positive"
-                  onClick={async () =>
-                    navigate(
-                      `/ui/project/${encodeURIComponent(projectForCreationName)}/instances/create`,
-                    )
-                  }
-                  disabled={!!createInstanceRestriction}
-                  title={createInstanceRestriction}
-                >
-                  Create instance
-                </Button>
               </EmptyState>
             )}
           </Col>

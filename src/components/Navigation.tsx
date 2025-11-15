@@ -470,6 +470,20 @@ const Navigation: FC = () => {
                           Configuration
                         </NavLink>
                       </SideNavigationItem>
+                      <SideNavigationItem>
+                        <NavLink
+                          to={`/ui/registerResource/create`}
+                          title={getNavTitle("configuration")}
+                          disabled={isAllProjects}
+                          onClick={softToggleMenu}
+                        >
+                          <Icon
+                            className="is-light p-side-navigation__icon"
+                            name="topic"
+                          />{" "}
+                          Register Resource
+                        </NavLink>
+                      </SideNavigationItem>
                       <hr
                         className={classnames("navigation-hr", {
                           "is-light": isLight,
