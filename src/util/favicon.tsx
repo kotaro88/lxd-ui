@@ -15,6 +15,6 @@ export const setFavicon = (): void => {
     if (!favicon) {
       return;
     }
-    (favicon as HTMLLinkElement).href = "/assets/img/navicloud-logo.png";
+    (favicon as HTMLLinkElement).href = "/assets/img/logo.png";
   }, [settings?.config]);
 };
