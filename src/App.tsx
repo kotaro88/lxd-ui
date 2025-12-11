@@ -104,6 +104,15 @@ const PermissionGroups = lazy(
 const PermissionIdpGroups = lazy(
   async () => import("pages/permissions/PermissionIdpGroups"),
 );
+const MarketplacePage = lazy(
+  async () => import("pages/marketplace/MarketplacePage"),
+);
+const MySqlDetailPage = lazy(
+  async () => import("pages/marketplace/mysql/MySqlDetailPage"),
+);
+const PostgreDetailPage = lazy(
+  async () => import("pages/marketplace/postgre/PostgreDetailPage"),
+);
 
 const HOME_REDIRECT_PATHS = ["/", "/ui", "/ui/project"];
 
@@ -481,6 +490,18 @@ const App: FC = () => {
         <Route
           path="/ui/project/:project/images"
           element={<ProtectedRoute outlet={<ImageList />} />}
+        />
+        <Route
+          path="/ui/project/:project/marketplace"
+          element={<ProtectedRoute outlet={<MarketplacePage />} />}
+        />
+        <Route
+          path="/ui/project/:project/marketplace/mysql/:app"
+          element={<ProtectedRoute outlet={<MySqlDetailPage />} />}
+        />
+        <Route
+          path="/ui/project/:project/marketplace/postgre/:app"
+          element={<ProtectedRoute outlet={<PostgreDetailPage />} />}
         />
         <Route
           path="/ui/server"
