@@ -105,13 +105,13 @@ const PermissionIdpGroups = lazy(
   async () => import("pages/permissions/PermissionIdpGroups"),
 );
 const MarketplacePage = lazy(
-  async () => import("pages/marketplace/MarketplacePage"),
+  async () => import("src/trecl/marketplace/MarketplacePage"),
 );
 const MySqlDetailPage = lazy(
-  async () => import("pages/marketplace/mysql/MySqlDetailPage"),
+  async () => import("src/trecl/marketplace/mysql/MySqlDetailPage"),
 );
 const PostgreDetailPage = lazy(
-  async () => import("pages/marketplace/postgre/PostgreDetailPage"),
+  async () => import("src/trecl/marketplace/postgre/PostgreDetailPage"),
 );
 
 const HOME_REDIRECT_PATHS = ["/", "/ui", "/ui/project"];
